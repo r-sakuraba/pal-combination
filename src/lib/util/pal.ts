@@ -11,4 +11,8 @@ export interface Combination {
 	[key: string]: { [key: string]: string };
 }
 
+export type ReverseCombination = {
+	[key: string]: string[][];
+};
+
 export const getDisplayPalFullName = (pal: Pal) => `No.${pal.id} ${pal.name}`;

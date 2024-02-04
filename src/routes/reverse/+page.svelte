@@ -1,22 +1,22 @@
 <script lang="ts">
-	import type { Pal, Combination, PalMap } from '$lib/util/pal';
+	import type { Pal, ReverseCombination, PalMap } from '$lib/util/pal';
 	import pals from '$lib/assets/pal.json';
-	import combination from '$lib/assets/combination.json';
+	import reverseCombination from '$lib/assets/reverseCombination.json';
 	import { getDisplayPalFullName } from '$lib/util/pal';
 
 	let selected: Pal;
-	const combinations = combination as Combination;
+	const reverseCombinations = reverseCombination as ReverseCombination;
 	const palMap = pals as PalMap;
 	$: combos = selected
-		? Object.entries(combinations[selected?.name]).map(([parent2, result]) => [
-				selected,
+		? reverseCombinations[selected?.name].map(([parent1, parent2]) => [
+				palMap[parent1],
 				palMap[parent2],
-				palMap[result]
+				selected
 			])
 		: [];
 </script>
 
-<p>順引き検索</p>
+<p>逆引き検索</p>
 <p>{selected ? getDisplayPalFullName(selected) : ''}</p>
 <select bind:value={selected}>
 	{#each Object.values(pals) as pal}
