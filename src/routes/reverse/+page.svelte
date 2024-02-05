@@ -1,14 +1,15 @@
 <script lang="ts">
-	import type { Pal, ReverseCombination, PalMap } from '$lib/util/pal';
-	import pals from '$lib/assets/pal.json';
-	import reverseCombination from '$lib/assets/reverseCombination.json';
+	import _pals from '$lib/assets/pal.json';
+	import _reverseCombination from '$lib/assets/reverseCombination.json';
+	import type { ChildToParentsMap, PalMap, PalType } from '$lib/util/pal';
 	import { getDisplayPalFullName } from '$lib/util/pal';
 
-	let selected: Pal;
-	const reverseCombinations = reverseCombination as ReverseCombination;
-	const palMap = pals as PalMap;
+	const childToParentsMap = _reverseCombination as unknown as ChildToParentsMap;
+	const palMap = _pals as PalMap;
+
+	let selected: PalType;
 	$: combos = selected
-		? reverseCombinations[selected?.name].map(([parent1, parent2]) => [
+		? childToParentsMap[selected?.name].map(([parent1, parent2]) => [
 				palMap[parent1],
 				palMap[parent2],
 				selected
@@ -19,7 +20,7 @@
 <p>逆引き検索</p>
 <p>{selected ? getDisplayPalFullName(selected) : ''}</p>
 <select bind:value={selected}>
-	{#each Object.values(pals) as pal}
+	{#each Object.values(_pals) as pal}
 		<option value={pal}>{getDisplayPalFullName(pal)}</option>
 	{/each}
 </select>

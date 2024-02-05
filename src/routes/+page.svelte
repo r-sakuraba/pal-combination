@@ -1,14 +1,15 @@
 <script lang="ts">
-	import type { Pal, Combination, PalMap } from '$lib/util/pal';
-	import pals from '$lib/assets/pal.json';
-	import combination from '$lib/assets/combination.json';
+	import type { PalType, ParentToChildMap, PalMap } from '$lib/util/pal';
+	import _pals from '$lib/assets/pal.json';
+	import _combination from '$lib/assets/combination.json';
 	import { getDisplayPalFullName } from '$lib/util/pal';
 
-	let selected: Pal;
-	const combinations = combination as Combination;
-	const palMap = pals as PalMap;
+	const parentToChildMap = _combination as ParentToChildMap;
+	const palMap = _pals as PalMap;
+
+	let selected: PalType;
 	$: combos = selected
-		? Object.entries(combinations[selected?.name]).map(([parent2, result]) => [
+		? Object.entries(parentToChildMap[selected?.name]).map(([parent2, result]) => [
 				selected,
 				palMap[parent2],
 				palMap[result]
@@ -19,7 +20,7 @@
 <p>順引き検索</p>
 <p>{selected ? getDisplayPalFullName(selected) : ''}</p>
 <select bind:value={selected}>
-	{#each Object.values(pals) as pal}
+	{#each Object.values(_pals) as pal}
 		<option value={pal}>{getDisplayPalFullName(pal)}</option>
 	{/each}
 </select>

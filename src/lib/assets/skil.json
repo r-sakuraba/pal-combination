@@ -1,0 +1,322 @@
+[
+	{
+		"rare": 3,
+		"name": "獰猛",
+		"description": "攻撃力+20%"
+	},
+	{
+		"rare": 3,
+		"name": "鉱山のチーフ",
+		"description": "プレイヤーの採掘効率増加+25%"
+	},
+	{
+		"rare": 3,
+		"name": "精霊王",
+		"description": "草属性攻撃ダメージ増加20%"
+	},
+	{
+		"rare": 3,
+		"name": "地帝",
+		"description": "地属性攻撃ダメージ増加20%"
+	},
+	{
+		"rare": 3,
+		"name": "雷帝",
+		"description": "雷属性攻撃ダメージ増加20%"
+	},
+	{
+		"rare": 3,
+		"name": "海皇",
+		"description": "水属性攻撃ダメージ増加20%"
+	},
+	{
+		"rare": 3,
+		"name": "炎帝",
+		"description": "炎属性攻撃ダメージ増加20%"
+	},
+	{
+		"rare": 3,
+		"name": "氷帝",
+		"description": "氷属性攻撃ダメージ増加20%"
+	},
+	{
+		"rare": 3,
+		"name": "神龍",
+		"description": "竜属性攻撃ダメージ増加20%"
+	},
+	{
+		"rare": 3,
+		"name": "冥王",
+		"description": "闇属性攻撃ダメージ増加20%"
+	},
+	{
+		"rare": 3,
+		"name": "聖天",
+		"description": "無属性攻撃ダメージ増加20%"
+	},
+	{
+		"rare": 3,
+		"name": "伝説",
+		"description": "攻撃20%, 防御20%, 移動速度15%"
+	},
+	{
+		"rare": 3,
+		"name": "突撃指揮者",
+		"description": "プレイヤーの攻撃増加10%"
+	},
+	{
+		"rare": 3,
+		"name": "希少",
+		"description": "作業速度+15%, 攻撃+15%"
+	},
+	{
+		"rare": 3,
+		"name": "職人気質",
+		"description": "作業速度+50%"
+	},
+	{
+		"rare": 3,
+		"name": "神速",
+		"description": "移動速度上昇30%"
+	},
+	{
+		"rare": 3,
+		"name": "堅城の軍師",
+		"description": "プレイヤーの防御増加10%"
+	},
+	{
+		"rare": 3,
+		"name": "屈強な肉体",
+		"description": "防御+20%"
+	},
+	{
+		"rare": 3,
+		"name": "伐採リーダー",
+		"description": "プレイヤーの伐採効率増加+25%"
+	},
+	{
+		"rare": 3,
+		"name": "ダイエットマスター",
+		"description": "満腹度が減りにくい+15%"
+	},
+	{
+		"rare": 3,
+		"name": "モチベーター",
+		"description": "プレイヤーの作業速度増加25%"
+	},
+	{
+		"rare": 3,
+		"name": "ワーカーホリック",
+		"description": "SAN値が減りにくい+15%"
+	},
+	{
+		"rare": 2,
+		"name": "まじめ",
+		"description": "作業速度+20%"
+	},
+	{
+		"rare": 2,
+		"name": "脳筋",
+		"description": "攻撃+30%, 作業速度-50%"
+	},
+	{
+		"rare": 2,
+		"name": "走るのが得意",
+		"description": "移動速度20%上昇"
+	},
+	{
+		"rare": 1,
+		"name": "すばしこい",
+		"description": "移動速度上昇+10%"
+	},
+	{
+		"rare": 1,
+		"name": "少食",
+		"description": "満腹度が減りにくい+10%"
+	},
+	{
+		"rare": 1,
+		"name": "耐震構造",
+		"description": "地属性ダメージ軽減10%"
+	},
+	{
+		"rare": 1,
+		"name": "絶縁体",
+		"description": "雷属性ダメージ軽減10%"
+	},
+	{
+		"rare": 1,
+		"name": "ポジティブ思考",
+		"description": "SAN値が減りにくい+10%"
+	},
+	{
+		"rare": 1,
+		"name": "火遊び好き",
+		"description": "炎属性攻撃ダメージ増加10%"
+	},
+	{
+		"rare": 1,
+		"name": "草木の香り",
+		"description": "草属性攻撃ダメージ増加10%"
+	},
+	{
+		"rare": 1,
+		"name": "水遊び好き",
+		"description": "水属性攻撃ダメージ増加10%"
+	},
+	{
+		"rare": 1,
+		"name": "竜の血族",
+		"description": "竜属性攻撃ダメージ増加10%"
+	},
+	{
+		"rare": 1,
+		"name": "夜の帳",
+		"description": "闇属性攻撃ダメージ増加10%"
+	},
+	{
+		"rare": 1,
+		"name": "無の境地",
+		"description": "無属性攻撃ダメージ増加10%"
+	},
+	{
+		"rare": 1,
+		"name": "冷血",
+		"description": "氷属性攻撃ダメージ増加10%"
+	},
+	{
+		"rare": 1,
+		"name": "コンデンサ",
+		"description": "雷属性攻撃ダメージ増加10%"
+	},
+	{
+		"rare": 1,
+		"name": "大地の力",
+		"description": "地属性攻撃ダメージ増加10%"
+	},
+	{
+		"rare": 1,
+		"name": "アブノーマル",
+		"description": "無属性ダメージ軽減10%"
+	},
+	{
+		"rare": 1,
+		"name": "陽キャラ",
+		"description": "闇属性ダメージ軽減10%"
+	},
+	{
+		"rare": 1,
+		"name": "日焼け好き",
+		"description": "炎属性ダメージ軽減10%"
+	},
+	{
+		"rare": 1,
+		"name": "高温体質",
+		"description": "氷属性ダメージ軽減10%"
+	},
+	{
+		"rare": 1,
+		"name": "防水加工",
+		"description": "水属性ダメージ軽減10%"
+	},
+	{
+		"rare": 1,
+		"name": "防草効果",
+		"description": "草属性ダメージ軽減10%"
+	},
+	{
+		"rare": 1,
+		"name": "ドラゴンキラー",
+		"description": "竜属性ダメージ軽減10%"
+	},
+	{
+		"rare": 1,
+		"name": "社畜",
+		"description": "作業速度+30%攻撃-30%"
+	},
+	{
+		"rare": 1,
+		"name": "うぬぼれ屋",
+		"description": "作業速度+10%防御-10%"
+	},
+	{
+		"rare": 1,
+		"name": "マゾヒスト",
+		"description": "防御+15%, 攻撃-15%"
+	},
+	{
+		"rare": 1,
+		"name": "サディスト",
+		"description": "攻撃+10%, 防御-10%"
+	},
+	{
+		"rare": 1,
+		"name": "粗暴",
+		"description": "攻撃+15%, 作業速度-10%"
+	},
+	{
+		"rare": 1,
+		"name": "オラオラ系",
+		"description": "攻撃+10%, 防御-10%"
+	},
+	{
+		"rare": 1,
+		"name": "勇敢",
+		"description": "攻撃+10%"
+	},
+	{
+		"rare": 1,
+		"name": "硬い皮膚",
+		"description": "防御+10%"
+	},
+	{
+		"rare": -1,
+		"name": "食いしんぼ",
+		"description": "満腹度が減りやすい+10%"
+	},
+	{
+		"rare": -1,
+		"name": "ビビり",
+		"description": "攻撃-10%"
+	},
+	{
+		"rare": -1,
+		"name": "精神が不安定",
+		"description": "SAN値が減りやすい+10%"
+	},
+	{
+		"rare": -1,
+		"name": "うたれ弱い",
+		"description": "防御-10%"
+	},
+	{
+		"rare": -1,
+		"name": "不器用",
+		"description": "作業速度-10%"
+	},
+	{
+		"rare": -2,
+		"name": "無限の胃袋",
+		"description": "満腹度が減りやすい+15%"
+	},
+	{
+		"rare": -2,
+		"name": "破滅願望",
+		"description": "SAN値が減りやすい+15%"
+	},
+	{
+		"rare": -3,
+		"name": "すぐ骨折する",
+		"description": "防御-20%"
+	},
+	{
+		"rare": -3,
+		"name": "ことなかれ主義",
+		"description": "攻撃-20%"
+	},
+	{
+		"rare": -3,
+		"name": "サボり癖",
+		"description": "作業速度-30%"
+	}
+]
