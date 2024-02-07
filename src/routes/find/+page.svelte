@@ -193,19 +193,21 @@
 		<CircularProgress style="height: 32px; width: 32px;" indeterminate />
 	</div>
 {:then}
-	{#if result != null}
-		<ul>
-			{#each result as res}
-				<li>
-					<CombiPal pal={res} first={true}></CombiPal>
-				</li>
-			{/each}
-		</ul>
-	{/if}
+	<div style="width: 60%; margin: 0 auto;text-align:  center; ">
+		{#if result != null}
+			<ul>
+				{#each result as res}
+					<li>
+						<CombiPal pal={res}></CombiPal>
+					</li>
+				{/each}
+			</ul>
+		{/if}
 
-	{#if result == null}
-		<p>見つかりませんでした</p>
-	{/if}
+		{#if result == null}
+			<p>見つかりませんでした</p>
+		{/if}
+	</div>
 {/await}
 
 <style>
