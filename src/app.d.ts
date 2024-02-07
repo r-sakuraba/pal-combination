@@ -8,6 +8,7 @@ declare global {
 		// interface PageState {}
 		// interface Platform {}
 	}
+	export type PartiallyPartial<T, K extends keyof T> = Omit<T, K> & Partial<Pick<T, K>>;
 }
 
 export {};

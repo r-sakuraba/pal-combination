@@ -1,19 +1,22 @@
-import type { Skil } from './skil';
+import type { Skill } from './skil';
+import { base } from '$app/paths';
 
 export type PalType = {
 	id: string;
 	name: string;
+	en: string;
 	alias?: string;
 };
 
 export type CombiPalType = {
 	histories?: CombiHistory[];
-} & PalType;
+} & (PalType | UserPalType);
 
 export type UserPalType = {
 	/** 1: male, 2: female */
 	gender: number;
-	skils: Skil[];
+	skills: Skill[];
+	createdAt: number;
 } & PalType;
 
 export type CombiHistory = [CombiPalType, CombiPalType];
@@ -35,3 +38,10 @@ export type ChildToParentsMap = {
 };
 
 export const getDisplayPalFullName = (pal: PalType) => `No.${pal.id} ${pal.name}`;
+const getFormatPalId = (pal: PalType) => {
+	const hasB = pal.id.includes('B');
+	return pal.id.padStart(hasB ? 4 : 3, '0');
+};
+export const getImgPath = (pal: PalType) =>
+	pal ? `${base}/img/${getFormatPalId(pal)}_${pal.en}.webp` : '';
+export const isUserPal = (pal: CombiPalType) => 'gender' in pal;

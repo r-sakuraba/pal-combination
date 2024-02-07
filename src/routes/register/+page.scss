@@ -1,0 +1,20 @@
+@use '@material/image-list/mixins' as image-list;
+ 
+.my-image-list-standard {
+  @include image-list.standard-columns(5);
+  max-width: 680px;
+}
+ 
+@media (max-width: 599px) {
+  .my-image-list-standard {
+    @include image-list.standard-columns(3);
+  }
+}
+
+.hidden {
+    display: none;
+}
+
+.image-item {
+    cursor: pointer;
+}
