@@ -44,4 +44,4 @@ const getFormatPalId = (pal: PalType) => {
 };
 export const getImgPath = (pal: PalType) =>
 	pal ? `${base}/img/${getFormatPalId(pal)}_${pal.en}.webp` : '';
-export const isUserPal = (pal: CombiPalType) => 'gender' in pal;
+export const isUserPal = (pal: CombiPalType): pal is UserPalType => 'createdAt' in pal;

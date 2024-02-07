@@ -218,6 +218,7 @@
 	ul > li {
 		border: 1px solid black;
 		display: flex;
+		flex-wrap: wrap;
 		align-items: center;
 	}
 
