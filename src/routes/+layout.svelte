@@ -29,6 +29,7 @@
 	<a href="{base}/reverse">逆引き検索</a> -->
 	<a href="{base}/find">探索</a>
 	<a href="{base}/register">登録</a>
+	<a href="{base}/not-have">所持</a>
 </nav>
 
 <slot />

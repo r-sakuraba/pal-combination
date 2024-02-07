@@ -29,6 +29,7 @@
 	const palMap = _pals as PalMap;
 
 	const hasPals = storage.getPals();
+	const notHavePals = storage.getNotHavePals().map((p) => p.name);
 
 	const sleep = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
 	let promise: Promise<void>;
@@ -61,21 +62,30 @@
 				}
 				// console.log(target, willFindPal);
 				if (otherParentsMap[target.name]?.[targetPal.name]) {
-					result.push({
-						...palMap[targetPal.name],
-						histories: otherParentsMap[target.name]?.[targetPal.name].map((comb) => [
-							target,
-							palMap[comb]
-						])
-					});
+					const difference = [otherParentsMap[target.name][targetPal.name], notHavePals].reduce(
+						(a, b) => a.filter((c) => !b.includes(c))
+					);
+					if (difference.length > 0) {
+						result.push({
+							...palMap[targetPal.name],
+							histories: difference.map((comb) => [target, palMap[comb]])
+						});
+					}
 				}
 
 				nextQueue.push(
 					...Object.entries(otherParentsMap[target.name] ?? [])
 						.filter(([child, parents]) => !searchedPal.has(child))
-						.map<CombiPalType>(([child, parents]) => ({
+						.map<[string, string[], string[]]>(([child, parents]) => {
+							const difference = [parents, notHavePals].reduce((a, b) =>
+								a.filter((c) => !b.includes(c))
+							);
+							return [child, parents, difference];
+						})
+						.filter(([child, parents, difference]) => difference.length > 0)
+						.map<CombiPalType>(([child, parents, difference]) => ({
 							...palMap[child],
-							histories: parents.map((parent) => [target, palMap[parent]])
+							histories: difference.map((diff) => [target, palMap[diff]])
 						}))
 				);
 			}
