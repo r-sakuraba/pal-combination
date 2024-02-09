@@ -28,7 +28,7 @@
 	<Row>
 		<Col>
 			<div style="text-align: center;">
-				<h1>パル配合シミュレーション</h1>
+				<h1 style="color: var(--bs-primary-text-emphasis);">パル配合シミュレーション</h1>
 			</div>
 		</Col>
 	</Row>
