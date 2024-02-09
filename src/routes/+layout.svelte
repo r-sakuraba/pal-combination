@@ -24,7 +24,7 @@
 	<!-- <link rel="stylesheet" href="{base}/smui.css" /> -->
 </svelte:head>
 
-<Container>
+<Container class="sticky-top header-bg">
 	<Row>
 		<Col>
 			<div style="text-align: center;">
@@ -52,6 +52,9 @@
 <slot />
 
 <style lang="scss">
+	:global(.header-bg) {
+		background-color: var(--bs-body-bg);
+	}
 	:global(.male) {
 		color: var(--bs-info);
 	}
