@@ -129,14 +129,14 @@
 		</Col>
 	</div>
 	<div class="row g-2">
-		<Col>
+		<Col xs="8">
 			<Form>
 				<FormGroup floating label="ニックネーム">
 					<Input bind:value={alias} />
 				</FormGroup>
 			</Form>
 		</Col>
-		<Col>
+		<div class="col-4 align-self-center" style="text-align: center;">
 			<input
 				type="radio"
 				class="btn-check"
@@ -159,7 +159,7 @@
 			<label class="btn" class:btn-outline-primary={genderText === 'female'} for="option2">
 				<Icon name="gender-female"></Icon>
 			</label>
-		</Col>
+		</div>
 	</div>
 	<div class="row g-2">
 		<Col>
@@ -169,6 +169,7 @@
 				list="datalistOptions"
 				id="skillDataList"
 				placeholder="Type to search..."
+				disabled={disabledAddSkill}
 				bind:value={skillName}
 				on:change={() => clickSkill2()}
 			/>

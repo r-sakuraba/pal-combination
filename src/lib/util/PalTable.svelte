@@ -1,9 +1,6 @@
 <script lang="ts">
 	import { createEventDispatcher } from 'svelte';
 
-	import Checkbox from '@smui/checkbox';
-	import DataTable, { Body, Cell, Head, Label, Row, SortValue } from '@smui/data-table';
-	import IconButton from '@smui/icon-button';
 	import type { UserPalType } from '$lib/util/pal';
 	import { dummySkil } from '$lib/util/skill';
 	import { Button, Icon, Table } from '@sveltestrap/sveltestrap';
@@ -13,7 +10,6 @@
 	export let pals: UserPalType[];
 
 	let sort: keyof UserPalType = 'createdAt';
-	let sortDirection: Lowercase<keyof typeof SortValue> = SortValue.DESCENDING;
 	let tableSelectedPal: UserPalType[] = [];
 
 	function deletePal(pal: UserPalType) {
@@ -23,15 +19,7 @@
 	function deletePals() {
 		dispatch('deletePal', tableSelectedPal);
 	}
-	$: tablePals = pals.toSorted((a, b) => {
-		let [aVal, bVal] = [a[sort], b[sort]][sortDirection === 'ascending' ? 'slice' : 'reverse']();
-		aVal = aVal ?? '';
-		bVal = bVal ?? '';
-		if (typeof aVal === 'string' && typeof bVal === 'string') {
-			return aVal.localeCompare(bVal);
-		}
-		return Number(aVal) - Number(bVal);
-	});
+	$: tablePals = pals.reverse();
 
 	function handleSort() {
 		// pals.sort((a, b) => {
@@ -55,8 +43,8 @@
 				<th>Name</th>
 				<th>Nickname</th>
 				<th style="text-align:center">
-					<Icon name="gender-male" style="color: darkcyan"></Icon>/
-					<Icon name="gender-female" style="color: crimson"></Icon>
+					<Icon name="gender-male" class="male"></Icon>/
+					<Icon name="gender-female" class="female"></Icon>
 				</th>
 				<th>Skills</th>
 				<th style="width: 5%;"></th>
@@ -65,7 +53,7 @@
 		<tbody class="table-group-divider">
 			{#each tablePals as pal, i}
 				<tr>
-					<th scope="row">{i + 1 + 10}</th>
+					<th scope="row">{i + 1}</th>
 					<!-- <Cell checkbox>
 					<Checkbox bind:group={tableSelectedPal} value={pal} valueKey={pal.name} />
 				</Cell> -->
@@ -73,9 +61,9 @@
 					<td class="text-wrap">{pal.alias ?? ''}</td>
 					<td style="text-align:center">
 						{#if pal.gender === 1}
-							<Icon name="gender-male" style="color: darkcyan"></Icon>
+							<Icon name="gender-male" class="male"></Icon>
 						{:else}
-							<Icon name="gender-female" style="color: crimson"></Icon>
+							<Icon name="gender-female" class="female"></Icon>
 						{/if}
 					</td>
 					<td>
@@ -95,7 +83,4 @@
 </div>
 
 <style>
-	/* btn:focus {
-		outline: none;
-	} */
 </style>

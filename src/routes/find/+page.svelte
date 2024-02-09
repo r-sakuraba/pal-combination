@@ -153,15 +153,18 @@
 		<Col>
 			<div class="row g-2">
 				<Col>
-					<label for="skillDataList" class="form-label">パッシブスキル選択</label>
+					<label for="skillDataList" class="form-label"> パッシブスキル選択 </label>
+
 					<input
 						class="form-control"
 						list="datalistOptions"
 						id="skillDataList"
 						placeholder="Type to search..."
+						disabled={disabledAddSkill}
 						bind:value={skillName}
 						on:change={() => clickSkill()}
 					/>
+					<p>※現在選択できるスキルは一つです</p>
 					<datalist id="datalistOptions">
 						{#each available as skill, i}
 							<option value={skill.name}> </option>
@@ -242,5 +245,11 @@
 		padding-top: calc(var(--bs-gutter-x) * 0.2);
 		padding-left: calc(var(--bs-gutter-x) * 0.2);
 		padding-right: calc(var(--bs-gutter-x) * 0.2);
+	}
+
+	p {
+		margin: 0;
+		font-size: 11px;
+		color: var(--bs-danger);
 	}
 </style>

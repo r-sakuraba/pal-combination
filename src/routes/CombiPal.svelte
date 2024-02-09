@@ -2,7 +2,6 @@
 	import CombiPal from './CombiPal.svelte';
 	import { isUserPal, type CombiPalType, getImgPath } from '$lib/util/pal';
 	import { groupBy } from '$lib/util/common';
-	import Tooltip, { Wrapper } from '@smui/tooltip';
 	import { Icon, Popover } from '@sveltestrap/sveltestrap';
 	import { v4 as uuidv4 } from 'uuid';
 
@@ -27,31 +26,35 @@
 {/if}
 
 <Popover target={id} placement="top" title="パル情報" trigger="hover">
-	name: {pal.alias || pal.name}<br />
+	パル名: {pal.alias || pal.name}<br />
 	{#if isUserPal(pal)}
-		gender: {pal.gender === 1 ? '♂' : '♀'}<br />
-		skills: {pal?.skills?.map((skill) => skill.name)}
+		性別:
+		{#if pal.gender === 1}
+			<Icon name="gender-male" class="male"></Icon>
+		{:else}
+			<Icon name="gender-female" class="female"></Icon>
+		{/if}<br />
+		スキル: {pal?.skills?.map((skill) => skill.name)}
 	{/if}
 </Popover>
 
 {#if true}
-	<Wrapper>
-		<img
-			style="border: {isUserPal(pal) ? 'red 2px solid' : 'black 1px dashed'}"
-			width="50px"
-			src={getImgPath(pal)}
-			alt=""
-			title="iusiui"
-			{id}
-		/>
-		<!-- <Tooltip yPos="above">
+	<img
+		style="border: {isUserPal(pal) ? 'red 2px solid' : 'black 1px dashed'}"
+		width="50px"
+		src={getImgPath(pal)}
+		alt=""
+		title="iusiui"
+		{id}
+	/>
+	<!-- <Tooltip yPos="above">
 			name: {pal.alias || pal.name},<br />
 			{#if isUserPal(pal)}
 				gender: {pal.gender === 1 ? '♂' : '♀'}<br />
 				skills: {pal?.skills?.map((skill) => skill.name)}
 			{/if}
 		</Tooltip> -->
-		{#if isUserPal(pal)}
+	<!-- {#if isUserPal(pal)}
 			<Tooltip yPos="above">
 				name: {pal.alias || pal.name}<br />
 				gender: {pal.gender === 1 ? '♂' : '♀'}<br />
@@ -61,6 +64,5 @@
 			<Tooltip yPos="above">
 				name: {pal.alias || pal.name}<br />
 			</Tooltip>
-		{/if}
-	</Wrapper>
+		{/if} -->
 {/if}

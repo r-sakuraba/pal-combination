@@ -1,10 +1,10 @@
 <script lang="ts">
 	import { base } from '$app/paths';
-	import Textfield from '@smui/textfield';
-	let textValue: string = '';
-	import '../theme/_smui-theme.scss';
 	import { Col, Container, Nav, NavItem, NavLink, Row } from '@sveltestrap/sveltestrap';
+	import { Styles } from '@sveltestrap/sveltestrap';
 </script>
+
+<Styles></Styles>
 
 <svelte:head>
 	<!-- Material Icons -->
@@ -51,7 +51,14 @@
 
 <slot />
 
-<style>
+<style lang="scss">
+	:global(.male) {
+		color: var(--bs-info);
+	}
+
+	:global(.female) {
+		color: var(--bs-danger);
+	}
 	/* h1 {
 		margin: 0 auto;
 		width: 60%;
