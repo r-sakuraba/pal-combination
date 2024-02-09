@@ -156,7 +156,7 @@
 					<label for="skillDataList" class="form-label"> パッシブスキル選択 </label>
 
 					<input
-						class="form-control"
+						class="form-control bg-w"
 						list="datalistOptions"
 						id="skillDataList"
 						placeholder="Type to search..."
@@ -178,14 +178,20 @@
 						<ButtonToolbar>
 							{#each selectedSkill as skill, i}
 								<ButtonGroup class="me-2">
-									<Button outline size="sm" color="primary">
-										<span class="d-inline-block text-truncate" style="max-width: 60px">
+									<Button
+										outline
+										size="sm"
+										color="primary"
+										class="btn-outline-primary-no-hover"
+										style="cursor: default;"
+									>
+										<span class="d-inline-block text-truncate" style="max-width: 110px">
 											{skill.name}
 										</span>
 									</Button>
-									<Button outline size="sm" color="secondary" on:click={() => removeSkill(i)}
-										><Icon name="x"></Icon></Button
-									>
+									<Button outline size="sm" color="primary" on:click={() => removeSkill(i)}>
+										<Icon name="x"></Icon>
+									</Button>
 								</ButtonGroup>
 							{/each}
 						</ButtonToolbar>
@@ -196,7 +202,9 @@
 	</div>
 	<div class="row g-2">
 		<Col>
-			<Button color="primary" block on:click={executeSearch}>探索</Button>
+			<!-- svelte-ignore a11y-click-events-have-key-events -->
+			<!-- svelte-ignore a11y-no-static-element-interactions -->
+			<div class="btn d-block execute-btn" on:click={executeSearch}>探索</div>
 		</Col>
 	</div>
 
@@ -229,7 +237,7 @@
 					{/each}
 				</ListGroup>
 			{:else}
-				<div class="col" style="text-align: center;">
+				<div class="col not-found-text" style="text-align: center;">
 					<h2>見つかりませんでした</h2>
 				</div>
 			{/if}
@@ -237,7 +245,7 @@
 	{/await}
 </Container>
 
-<style>
+<style lang="scss">
 	.row {
 		margin-top: 0;
 	}
@@ -249,7 +257,26 @@
 
 	p {
 		margin: 0;
-		font-size: 11px;
+		font-size: 10px;
 		color: var(--bs-danger);
+	}
+
+	.not-found-text {
+		color: #517d99;
+	}
+
+	.execute-btn {
+		background-color: #6ac1b7;
+		border-color: #6ac1b7;
+		color: #fff;
+		&:hover {
+			background-color: #48aca0;
+			border-color: #48aca0;
+			color: #fff;
+		}
+	}
+
+	.bg-w {
+		background-color: #fff;
 	}
 </style>

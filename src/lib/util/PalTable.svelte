@@ -40,13 +40,13 @@
 		<thead>
 			<tr>
 				<th style="width: 5%;">No</th>
-				<th>Name</th>
-				<th>Nickname</th>
+				<th>パル名</th>
+				<th>ニックネーム</th>
 				<th style="text-align:center">
 					<Icon name="gender-male" class="male"></Icon>/
 					<Icon name="gender-female" class="female"></Icon>
 				</th>
-				<th>Skills</th>
+				<th>スキル</th>
 				<th style="width: 5%;"></th>
 			</tr>
 		</thead>

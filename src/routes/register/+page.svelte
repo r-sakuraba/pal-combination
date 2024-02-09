@@ -131,8 +131,9 @@
 	<div class="row g-2">
 		<Col xs="8">
 			<Form>
-				<FormGroup floating label="ニックネーム">
-					<Input bind:value={alias} />
+				<label for="nickname" class="form-label">ニックネーム</label>
+				<FormGroup>
+					<input id="nickname" class="form-control bg-w" bind:value={alias} />
 				</FormGroup>
 			</Form>
 		</Col>
@@ -145,7 +146,7 @@
 				id="option1"
 				bind:group={genderText}
 			/>
-			<label class="btn" class:btn-outline-primary={genderText === 'male'} for="option1">
+			<label class="btn gender-btn" class:btn-outline-primary={genderText === 'male'} for="option1">
 				<Icon name="gender-male"></Icon>
 			</label>
 			<input
@@ -156,16 +157,20 @@
 				id="option2"
 				bind:group={genderText}
 			/>
-			<label class="btn" class:btn-outline-primary={genderText === 'female'} for="option2">
+			<label
+				class="btn gender-btn"
+				class:btn-outline-primary={genderText === 'female'}
+				for="option2"
+			>
 				<Icon name="gender-female"></Icon>
 			</label>
 		</div>
 	</div>
 	<div class="row g-2">
-		<Col>
+		<Col sm="12" md="4">
 			<label for="skillDataList" class="form-label">パッシブスキル選択</label>
 			<input
-				class="form-control"
+				class="form-control bg-w"
 				list="datalistOptions"
 				id="skillDataList"
 				placeholder="Type to search..."
@@ -202,19 +207,24 @@
 				</Dropdown>
 			</div> -->
 		</Col>
-		<Col>
+		<Col sm="12" md="8" class="align-self-center">
 			<div class="d-flex justify-content-center">
 				<ButtonToolbar>
 					{#each selectedSkill as skill, i}
 						<ButtonGroup class="me-2">
-							<Button outline size="sm" color="primary">
-								<span class="d-inline-block text-truncate" style="max-width: 60px">
+							<Button
+								outline
+								size="sm"
+								color="primary btn-outline-primary-no-hover"
+								style="cursor: default;"
+							>
+								<span class="d-inline-block text-truncate" style="max-width: 90px">
 									{skill.name}
 								</span>
 							</Button>
-							<Button outline size="sm" color="secondary" on:click={() => removeSkill(i)}
-								><Icon name="x"></Icon></Button
-							>
+							<Button outline size="sm" color="primary" on:click={() => removeSkill(i)}>
+								<Icon name="x"></Icon>
+							</Button>
 						</ButtonGroup>
 					{/each}
 				</ButtonToolbar>
@@ -223,7 +233,9 @@
 	</div>
 	<div class="row g-2">
 		<Col>
-			<Button color="primary" block on:click={registerPal}>登録</Button>
+			<!-- svelte-ignore a11y-click-events-have-key-events -->
+			<!-- svelte-ignore a11y-no-static-element-interactions -->
+			<div class="btn d-block execute-btn" on:click={registerPal}>登録</div>
 		</Col>
 	</div>
 	<div class="row g-2">
@@ -254,5 +266,40 @@
 		padding-top: calc(var(--bs-gutter-x) * 0.2);
 		padding-left: calc(var(--bs-gutter-x) * 0.2);
 		padding-right: calc(var(--bs-gutter-x) * 0.2);
+	}
+
+	.gender-btn {
+		background-color: transparent;
+		border-color: transparent;
+		color: #48aca0;
+		&:hover {
+			background-color: #48aca0;
+			border-color: #48aca0;
+			color: #fff;
+		}
+	}
+
+	.execute-btn {
+		background-color: #6ac1b7;
+		border-color: #6ac1b7;
+		color: #fff;
+		&:hover {
+			background-color: #48aca0;
+			border-color: #48aca0;
+			color: #fff;
+		}
+	}
+	.btn-check:checked + .btn {
+		background-color: #48aca0;
+		border-color: #48aca0;
+		color: #fff;
+	}
+
+	.bg-w {
+		background-color: #fff;
+	}
+
+	:global(.bg-w) {
+		background-color: #fff;
 	}
 </style>
