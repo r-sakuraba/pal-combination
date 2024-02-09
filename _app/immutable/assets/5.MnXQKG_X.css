@@ -1,0 +1,1 @@
+.my-image-list-standard{max-width:680px}.my-image-list-standard .mdc-image-list__item{width:calc(20% - 4.2px);margin:2px}@media (max-width: 599px){.my-image-list-standard .mdc-image-list__item{width:calc(100% / 3 - 4.3333333333px);margin:2px}}.hidden{display:none}.image-item{cursor:pointer}.dropdown-menu.svelte-hzoep8{max-height:50vh;overflow-y:auto}

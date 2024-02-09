@@ -1,0 +1,1 @@
+const e="pal-combination",a=`${e}-not-have`,s=()=>JSON.parse(localStorage.getItem(e)??"[]"),o=t=>{localStorage.setItem(e,JSON.stringify(t))},r=t=>{localStorage.setItem(a,JSON.stringify(t))},g=()=>JSON.parse(localStorage.getItem(a)??"[]");export{g as a,o as b,s as g,r};
