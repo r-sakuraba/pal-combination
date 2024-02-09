@@ -1,3 +1,16 @@
+<script>
+	import { Col, Container, Row } from '@sveltestrap/sveltestrap';
+	import { base } from '$app/paths';
+</script>
+
+<Container class="text-center">
+	<Row style="margin-top: 40px;">
+		<Col>
+			<a class="btn" href="{base}/find">開始</a>
+		</Col>
+	</Row>
+</Container>
+
 <!-- <script lang="ts">
 	import { type PalType, type ParentToChildMap, type PalMap, getImgPath } from '$lib/util/pal';
 	import _pals from '$lib/assets/pal.json';
@@ -140,3 +153,18 @@
 		background-color: #e9e9e9;
 	}
 </style> -->
+
+<style lang="scss">
+	.btn {
+		--bs-btn-bg: #6ac1b7;
+		--bs-btn-color: #fff;
+		--bs-btn-border-color: #6ac1b7;
+		--bs-btn-hover-bg: #48aca0;
+		--bs-btn-hover-color: #fff;
+		--bs-btn-hover-border-color: #48aca0;
+		--bs-btn-disabled-bg: #6ac1b7;
+		--bs-btn-disabled-border-color: #6ac1b7;
+		--bs-btn-active-bg: #6ac1b7;
+		--bs-btn-active-border-color: #6ac1b7;
+	}
+</style>
