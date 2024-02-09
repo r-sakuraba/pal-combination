@@ -1,4 +1,4 @@
-import type { Skill } from './skil';
+import type { Skill } from './skill';
 import { base } from '$app/paths';
 
 export type PalType = {
