@@ -6,7 +6,7 @@
 <Container class="text-center">
 	<Row style="margin-top: 40px;">
 		<Col>
-			<a class="btn" href="{base}/find">開始</a>
+			<a class="btn" href="{base}/register">開始</a>
 		</Col>
 	</Row>
 </Container>
