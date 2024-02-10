@@ -19,7 +19,7 @@
 	function deletePals() {
 		dispatch('deletePal', tableSelectedPal);
 	}
-	$: tablePals = pals.reverse();
+	$: tablePals = pals.toReversed();
 
 	function handleSort() {
 		// pals.sort((a, b) => {
