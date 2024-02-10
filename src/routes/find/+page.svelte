@@ -181,7 +181,6 @@
 									<Button
 										outline
 										size="sm"
-										color="primary"
 										class="btn-outline-primary-no-hover"
 										style="cursor: default;"
 									>
@@ -281,15 +280,24 @@
 	}
 
 	:global(.btn-outline-primary) {
-		--bs-btn-bg: transparent;
-		--bs-btn-color: #6ac1b7;
-		--bs-btn-border-color: #6ac1b7;
-		--bs-btn-hover-bg: #48aca0;
-		--bs-btn-hover-border-color: #48aca0;
-		--bs-btn-disabled-bg: #6ac1b7;
-		--bs-btn-disabled-border-color: #6ac1b7;
-		--bs-btn-active-bg: #6ac1b7;
-		--bs-btn-active-border-color: #6ac1b7;
+		background-color: transparent !important;
+		color: #6ac1b7 !important;
+		border-color: #6ac1b7 !important;
+		&:hover {
+			background-color: #48aca0 !important;
+			color: #fff !important;
+			border-color: #48aca0 !important;
+		}
+		&:disabled {
+			background-color: #6ac1b7 !important;
+			color: #fff !important;
+			border-color: #6ac1b7 !important;
+		}
+		&:active {
+			background-color: #6ac1b7 !important;
+			color: #fff !important;
+			border-color: #6ac1b7 !important;
+		}
 	}
 
 	:global(.btn-outline-primary-no-hover) {

@@ -215,7 +215,7 @@
 							<Button
 								outline
 								size="sm"
-								color="primary btn-outline-primary-no-hover"
+								class="btn-outline-primary-no-hover"
 								style="cursor: default;"
 							>
 								<span class="d-inline-block text-truncate" style="max-width: 90px">
@@ -269,13 +269,13 @@
 	}
 
 	.gender-btn {
-		background-color: transparent;
-		border-color: transparent;
-		color: #48aca0;
+		background-color: transparent !important;
+		border-color: transparent !important;
+		color: #48aca0 !important;
 		&:hover {
-			background-color: #48aca0;
-			border-color: #48aca0;
-			color: #fff;
+			background-color: #48aca0 !important;
+			border-color: #48aca0 !important;
+			color: #fff !important;
 		}
 	}
 
@@ -290,9 +290,9 @@
 		}
 	}
 	.btn-check:checked + .btn {
-		background-color: #48aca0;
-		border-color: #48aca0;
-		color: #fff;
+		background-color: #48aca0 !important;
+		border-color: #48aca0 !important;
+		color: #fff !important;
 	}
 
 	.bg-w {
