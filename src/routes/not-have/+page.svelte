@@ -2,38 +2,15 @@
 	import _pals from '$lib/assets/pal.json';
 	import * as storage from '$lib/util/localstorage';
 	import type { PalMap, PalType, UserPalType } from '$lib/util/pal';
-	import { getImgPath } from '$lib/util/pal';
-	import ImageList, {
-		Image,
-		ImageAspectContainer,
-		Label as ImageLabel,
-		Item,
-		Supporting
-	} from '@smui/image-list';
-	import '../../theme/_smui-theme.scss';
-	import './+page.scss';
+	import { Container, Row } from '@sveltestrap/sveltestrap';
+	import PalCard from '../PalCard.svelte';
 
 	const palMap = _pals as PalMap;
 
-	let hasPals: UserPalType[] = storage.getPals();
 	let notHavePals = new Set(storage.getNotHavePals().map((pal) => pal?.name));
 
-	let selected: PalType = palMap['モコロン'];
-
-	const updateNotHavePal = () => {
-		storage.registerPal(hasPals);
-	};
-
-	const deletePal = (event: CustomEvent<UserPalType[]>) => {
-		console.log(event);
-
-		hasPals = hasPals.filter((pal) =>
-			event.detail.every((deletePal) => deletePal.createdAt !== pal.createdAt)
-		);
-		storage.registerPal(hasPals);
-	};
-
-	function clickImage(pal: PalType) {
+	function clickImage(event: CustomEvent<PalType>) {
+		const pal = event.detail;
 		if (notHavePals.has(pal.name)) {
 			notHavePals.delete(pal.name);
 		} else {
@@ -45,33 +22,36 @@
 	}
 </script>
 
-<div class="test">
-	<ImageList class="my-image-list-standard" withTextProtection>
+<Container>
+	<Row>
 		{#each Object.values(palMap) as pal, i}
-			<Item class="image-item" on:click={() => clickImage(pal)}>
-				<ImageAspectContainer>
-					<Image style="color: red" src={getImgPath(pal)} alt={pal.en} />
-				</ImageAspectContainer>
-				<Supporting style="height: {notHavePals.has(pal.name) ? '100%' : '30%'}">
-					<ImageLabel style="font-size: 13px">
-						{#if notHavePals.has(pal.name)}
-							<span style="font-size: 25px">未所持</span><br />
-						{/if}
-						{pal.name}
-					</ImageLabel>
-				</Supporting>
-			</Item>
+			<div class="col-3 col-md-2 col-xl-1 col-div">
+				<PalCard {pal} notHave={notHavePals.has(pal.name)} on:clickImage={clickImage}></PalCard>
+			</div>
 		{/each}
-	</ImageList>
-</div>
+	</Row>
+</Container>
 
 <style>
-	.test {
-		/* background-color: aqua; */
-		max-width: 70%;
-		width: 800px;
-		/* display: flex;
-		text-align: center; */
-		margin: 0 auto;
+	.col-div {
+		padding-top: calc(var(--bs-gutter-x) * 0.2);
+		padding-left: calc(var(--bs-gutter-x) * 0.2);
+		padding-right: calc(var(--bs-gutter-x) * 0.2);
 	}
+
+	/* .card-img-overlay {
+		padding: 0.2rem;
+	}
+
+	.not-have {
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		background-color: rgba(var(--bs-body-color-rgb), 0.8);
+	} */
 </style>

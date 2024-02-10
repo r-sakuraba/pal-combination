@@ -1,9 +1,23 @@
-<script lang="ts">
+<script>
+	import { Col, Container, Row } from '@sveltestrap/sveltestrap';
+	import { base } from '$app/paths';
+</script>
+
+<Container class="text-center">
+	<Row style="margin-top: 40px;">
+		<Col>
+			<a class="btn" href="{base}/register">開始</a>
+		</Col>
+	</Row>
+</Container>
+
+<!-- <script lang="ts">
 	import { type PalType, type ParentToChildMap, type PalMap, getImgPath } from '$lib/util/pal';
 	import _pals from '$lib/assets/pal.json';
 	import _combination from '$lib/assets/combination.json';
 	import { getDisplayPalFullName } from '$lib/util/pal';
 	import Card, { Content, PrimaryAction, Media, MediaContent } from '@smui/card';
+	import { Button, Col, Container, Row } from '@sveltestrap/sveltestrap';
 
 	const parentToChildMap = _combination as ParentToChildMap;
 	const palMap = _pals as PalMap;
@@ -20,6 +34,7 @@
 </script>
 
 <p>順引き検索</p>
+
 <p>{selected ? getDisplayPalFullName(selected) : ''}</p>
 {#if selected}
 	<div class="card-display">
@@ -42,7 +57,6 @@
 			<Card style="min-width: 300px;">
 				<Media class="card-media-square" aspectRatio="square">
 					<MediaContent>
-						<!-- <img src={getImgPath(selected)} alt="" /> -->
 						<h2
 							class="mdc-typography--headline6"
 							style="color: #fff; position: absolute; bottom: 16px; left: 16px; margin: 0;"
@@ -79,7 +93,6 @@
 
 	* :global(.card-container) {
 		display: inline-flex;
-		/* justify-content: center; */
 		align-items: center;
 		min-height: 200px;
 		width: 380px;
@@ -138,5 +151,20 @@
 
 	li:hover {
 		background-color: #e9e9e9;
+	}
+</style> -->
+
+<style lang="scss">
+	.btn {
+		--bs-btn-bg: #6ac1b7;
+		--bs-btn-color: #fff;
+		--bs-btn-border-color: #6ac1b7;
+		--bs-btn-hover-bg: #48aca0;
+		--bs-btn-hover-color: #fff;
+		--bs-btn-hover-border-color: #48aca0;
+		--bs-btn-disabled-bg: #6ac1b7;
+		--bs-btn-disabled-border-color: #6ac1b7;
+		--bs-btn-active-bg: #6ac1b7;
+		--bs-btn-active-border-color: #6ac1b7;
 	}
 </style>
