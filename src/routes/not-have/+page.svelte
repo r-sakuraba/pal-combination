@@ -39,6 +39,30 @@
 		padding-right: calc(var(--bs-gutter-x) * 0.2);
 	}
 
+	:global(.btn-outline-primary) {
+		--bs-btn-bg: transparent;
+		--bs-btn-color: #6ac1b7;
+		--bs-btn-border-color: #6ac1b7;
+		--bs-btn-hover-bg: #48aca0;
+		--bs-btn-hover-border-color: #48aca0;
+		--bs-btn-disabled-bg: #6ac1b7;
+		--bs-btn-disabled-border-color: #6ac1b7;
+		--bs-btn-active-bg: #6ac1b7;
+		--bs-btn-active-border-color: #6ac1b7;
+	}
+
+	:global(.btn-outline-primary-no-hover) {
+		--bs-btn-bg: transparent;
+		--bs-btn-color: #6ac1b7;
+		--bs-btn-border-color: #6ac1b7;
+		--bs-btn-hover-bg: transparent;
+		--bs-btn-hover-color: #6ac1b7;
+		--bs-btn-hover-border-color: #6ac1b7;
+		--bs-btn-active-bg: transparent;
+		--bs-btn-active-color: #6ac1b7;
+		--bs-btn-active-border-color: #6ac1b7;
+	}
+
 	/* .card-img-overlay {
 		padding: 0.2rem;
 	}
