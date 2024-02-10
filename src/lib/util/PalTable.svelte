@@ -1,4 +1,5 @@
 <script lang="ts">
+	//test
 	import { createEventDispatcher } from 'svelte';
 
 	import type { UserPalType } from '$lib/util/pal';
